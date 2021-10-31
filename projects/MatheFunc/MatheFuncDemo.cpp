@@ -3,6 +3,10 @@
 #include <math.h>
 #include <time.h>
 #include <stdlib.h>
+#ifdef _COMPLIE_LINUX_
+#include <sys/time.h>
+#define mingw_gettimeofday (gettimeofday)
+#endif
 #define DEFAULT_TAYLOR_LEVEL_NUM  (32)
 #define LOOP_N_TIMES              (1024*32)
 #define LOG_LINE_STR(S) std::cout<<S<<std::endl
