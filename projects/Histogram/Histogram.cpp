@@ -62,3 +62,32 @@ void IMAGE_8BIT_Histogram::do_lut_by_Cum_HistogramTBL()
                     output_array[i] = newLUT[pixel_array[i]];
           }         
 }
+void IMAGE_8BIT_Histogram::draw_Cur_HistogramTBL()
+{
+          //
+          uint32_t draw_max_score = 85;
+          for(int i=0;i<256;i++)
+          {
+              printf("value[%3d]: ",i);
+              uint32_t current_score  = (uint32_t)this->Cur_HistogramTBL[i]*draw_max_score/this->Total_Pixel_NUM/this->ImageChannelNB;
+              for(uint32_t j=0;j<current_score;j++)
+              {
+                  printf("-");
+              }
+              printf("        %.4f\n",(float)this->Cur_HistogramTBL[i]*100/this->Total_Pixel_NUM/this->ImageChannelNB);
+          }
+}
+void IMAGE_8BIT_Histogram::draw_Cum_HistogramTBL()
+{
+          uint32_t draw_max_score = 85;
+          for(int i=0;i<256;i++)
+          {
+              printf("value[%3d]: ",i);
+              uint32_t current_score  = (uint32_t)this->Cum_HistogramTBL[i]*draw_max_score/this->Total_Pixel_NUM/this->ImageChannelNB;
+              for(uint32_t j=0;j<current_score;j++)
+              {
+                  printf("-");
+              }
+              printf("        %.4f%\n",(float)this->Cum_HistogramTBL[i]*100/this->Total_Pixel_NUM/this->ImageChannelNB);
+          }
+}

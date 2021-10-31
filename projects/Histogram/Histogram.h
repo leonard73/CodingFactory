@@ -17,6 +17,8 @@ typedef struct IMAGE_8BIT_Histogram_t
           void log_Cur_HistogramTBL();
           void log_Cum_HistogramTBL();
           void do_lut_by_Cum_HistogramTBL();
+          void draw_Cur_HistogramTBL();
+          void draw_Cum_HistogramTBL();
           // void Ref_HistogramTBL();
           // void Cum_HistogramTBL();
 }IMAGE_8BIT_Histogram;
